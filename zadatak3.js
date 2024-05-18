@@ -1,4 +1,10 @@
+document.addEventListener("keydown", function(e) {
+    if (e.key === 'Enter') {
+        zadatak1();
+      }
+});
 function zadatak3() {
+    document.getElementById("ispis").innerHTML = "";
     let x = document.getElementById("x0").value;
     if(x >= -1 && x <= 0) {
         let funkcija;
@@ -27,6 +33,7 @@ function zadatak3() {
         +"<p>x: "+x+"<br>"
         +"<p>Vrijednost funkcije: "+funkcija+"<br>"
         +"<p>Vrijednost derivacije: "+derivacija+"<br>"
+        document.getElementById("ispis").innerHTML += "<br><p>konacni reuzultat: "+x+"<br>"
     }
     else {
         document.getElementById("ispis").innerHTML = "Upisana pocetna vrijednost nije iz zadanog intervala."; 

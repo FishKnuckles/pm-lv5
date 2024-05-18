@@ -1,4 +1,10 @@
+document.addEventListener("keydown", function(e) {
+    if (e.key === 'Enter') {
+        zadatak1();
+      }
+});
 function zadatak2() {
+    document.getElementById("ispis").innerHTML = "";
     let x = document.getElementById("x0").value;
     if(x >= -2 && x <= 1) {
         let funkcija;
@@ -10,7 +16,7 @@ function zadatak2() {
         for(razlika; razlika > preciznost; n++) {
             //(4x^4-2x^2 + 1)(2x -3x^3 -1) = 0, x=[-2,-1]
             funkcija = ((4*Math.pow(x,4) - 2*Math.pow(x,2) + 1)*(2*x - Math.pow(x,3) - 1));
-            derivacija =(4*4*Math.pow(x,3) - 2*2*x + 1)*(2*x - Math.pow(x,3) - 1) + (4*Math.pow(x,4) - 2*Math.pow(x,2) + 1)*(2 - 3*Math.pow(x,2));
+            derivacija = ((4*4*Math.pow(x,3) - 2*2*x + 1)*(2*x - Math.pow(x,3) - 1) + (4*Math.pow(x,4) - 2*Math.pow(x,2) + 1)*(2 - 3*Math.pow(x,2)));
             prosliX = x;
             document.getElementById("ispis").innerHTML += 
                 "<p>Iteracija: "+n+"</p>"
@@ -25,6 +31,7 @@ function zadatak2() {
         +"<p>x: "+x+"<br>"
         +"<p>Vrijednost funkcije: "+funkcija+"<br>"
         +"<p>Vrijednost derivacije: "+derivacija+"<br>"
+        document.getElementById("ispis").innerHTML += "<br><p>konacni reuzultat: "+x+"<br>"
     }
     else {
         document.getElementById("ispis").innerHTML = "Upisana pocetna vrijednost nije iz zadanog intervala."; 
