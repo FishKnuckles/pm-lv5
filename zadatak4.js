@@ -15,7 +15,7 @@ document.addEventListener("keydown", function(e) {
         for(razlika; razlika > preciznost; n++) {
             //1/x - x^2 - 3 = 0,
             funkcija = ((1/x) - Math.pow(x,2) - 3);
-            derivacija = (((x - 1)/Math.pow(x,2))- 2*x);
+            derivacija = ((-1/Math.pow(x,2))- 2*x);
             prosliX = x;
             document.getElementById("ispis").innerHTML += 
                 "<p>Iteracija: "+n+"</p>"
